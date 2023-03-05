@@ -1,0 +1,16 @@
+name: brndnmtthws/rust-action-cargo-binstall
+description: Cargo binstall action
+author: Brenden Matthews <github@brenden.brndn.io>
+branding:
+  icon: box
+  color: purple
+
+inputs:
+  packages:
+    description: |
+      A comma or whitespace separated list of packages to install using `cargo
+      binstall`.
+
+runs:
+  using: 'node16'
+  main: 'dist/index.mjs'

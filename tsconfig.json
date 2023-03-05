@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "ESNext",
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node16"
+  },
+  "include": ["src/**/*.ts", "src/main.mts", "src/util.ts"],
+  "exclude": ["node_modules"]
+}
