@@ -61,7 +61,7 @@ const installPackages = async () => {
     .split(/(,|\s)+/)
     .map((p) => p.trim())
     .filter((p) => p.length > 0)
-  await exec('cargo-binstall', ['-y', ...packages])
+  await exec('cargo-binstall', ['-y', '--no-symlinks', ...packages])
 }
 
 async function run(): Promise<void> {
