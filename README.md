@@ -11,7 +11,7 @@ available, rather than compiling everything from source.
 This is useful for installing tools such as
 [Tarpaulin](https://github.com/xd009642/tarpaulin),
 [sccache](https://github.com/mozilla/sccache), or any other Rust package that's
-supported by `cargo-binstall` in your GitHub Actions.
+supported by `cargo binstall` in your GitHub Actions.
 
 You can use this action in your workflow directly, or use the [all-in-one
 action](https://github.com/brndnmtthws/rust-action) for all your Rust CI needs.
