@@ -1,0 +1,40 @@
+name: brndnmtthws/rust-action-cargo-binstall
+description: Rustup install action
+author: Brenden Matthews <github@brenden.brndn.io>
+branding:
+  icon: box
+  color: purple
+
+inputs:
+  toolchain:
+    default: stable
+    description: |
+      The Rust toolchain to install (i.e., stable, nightly, beta, etc). Refer
+      to https://rust-lang.github.io/rustup/concepts/toolchains.html on how to
+      specify the toolchain.
+  components:
+    description: |
+      List of individual components to install after installing rustup. Can be
+      a whitespace or comma separated list.
+  profile:
+    description: |
+      Override the default rustup profile (for example, 'minimal').
+  allow-downgrade:
+    description: |
+      Allow rustup to downgrade the installation until all components are
+      available.
+    default: 'true'
+  targets:
+    description: |
+      Install additional targets for cross compilation (i.e.,
+      'x86_64-apple-ios, armv7-unknown-linux-musleabi'). Can be a whitespace or
+      comma separate list of targets. Run `rustup target list` to list all targets.
+  self-update:
+    description: |
+      Make sure rustup itself is up-to-date before using it. This may fail on
+      some platforms, so it's disabled by default.
+    default: 'false'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.mjs'
