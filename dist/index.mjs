@@ -6746,7 +6746,7 @@ const installPackages = () => __awaiter(void 0, void 0, void 0, function* () {
         .split(/(,|\s)+/)
         .map((p) => p.trim())
         .filter((p) => p.length > 0);
-    yield (0,exec.exec)('cargo-binstall', ['-y', ...packages]);
+    yield (0,exec.exec)('cargo-binstall', ['-y', '--no-symlinks', ...packages]);
 });
 function run() {
     var _a, _b;
