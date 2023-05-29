@@ -7,7 +7,7 @@
   },
   "description": "GitHub action for installing Cargo packages with cargo-binstall",
   "devDependencies": {
-    "@types/eslint": "^8.37.0",
+    "@types/eslint": "^8.40.0",
     "@types/jest": "^29.5.1",
     "@types/node": "^20.2.3",
     "@types/prettier": "2.7.2",
