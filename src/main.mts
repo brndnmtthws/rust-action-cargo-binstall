@@ -1,13 +1,4 @@
-import {
-  debug,
-  startGroup,
-  addPath,
-  endGroup,
-  setFailed,
-  info,
-  getInput,
-  group
-} from '@actions/core'
+import { addPath, setFailed, getInput, group } from '@actions/core'
 import { exec } from '@actions/exec'
 import {
   cacheDir,
@@ -16,8 +7,6 @@ import {
   extractZip,
   find
 } from '@actions/tool-cache'
-import { promises as fs } from 'fs'
-import path from 'path'
 import { osArchToUrl } from './util.js'
 
 const extractArchive = async (
