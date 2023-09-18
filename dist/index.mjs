@@ -1,6 +1,59 @@
 import './sourcemap-register.cjs';import { createRequire as __WEBPACK_EXTERNAL_createRequire } from "module";
 /******/ var __webpack_modules__ = ({
 
+/***/ 4024:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+var __webpack_unused_export__;
+
+__webpack_unused_export__ = ({ value: true });
+exports.o = void 0;
+const core_1 = __nccwpck_require__(2186);
+const osArchToUrl = (os, arch) => {
+    if (os.toLowerCase() === 'linux') {
+        if (arch.toLowerCase() === 'x86_64' || arch.toLowerCase() === 'x64') {
+            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz';
+        }
+        if (arch.toLowerCase() === 'arm64' ||
+            arch.toLowerCase() === 'aarch64' ||
+            arch.toLowerCase() === 'armv8') {
+            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-aarch64-unknown-linux-musl.tgz';
+        }
+        if (arch.toLowerCase() === 'armv7') {
+            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz';
+        }
+    }
+    if (os.toLowerCase() === 'windows') {
+        if (arch.toLowerCase() === 'x86_64' || arch.toLowerCase() === 'x64') {
+            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-pc-windows-msvc.zip';
+        }
+        if (arch.toLowerCase() === 'arm64' ||
+            arch.toLowerCase() === 'aarch64' ||
+            arch.toLowerCase() === 'armv8') {
+            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-aarch64-pc-windows-msvc.zip';
+        }
+    }
+    if (os.toLowerCase() === 'macos') {
+        if (arch.toLowerCase() === 'arm64' ||
+            arch.toLowerCase() === 'aarch64' ||
+            arch.toLowerCase() === 'armv8' ||
+            arch.toLowerCase() === 'm1' ||
+            arch.toLowerCase() === 'm2') {
+            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-aarch64-apple-darwin.zip';
+        }
+        if (arch.toLowerCase() === 'x86_64' || arch.toLowerCase() === 'x64') {
+            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-apple-darwin.zip';
+        }
+        return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-universal-apple-darwin.zip';
+    }
+    (0, core_1.setFailed)('Unsupported OS/arch');
+    return '';
+};
+exports.o = osArchToUrl;
+
+
+/***/ }),
+
 /***/ 7351:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
@@ -6652,57 +6705,10 @@ module.exports = __WEBPACK_EXTERNAL_createRequire(import.meta.url)("util");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-
-// EXTERNAL MODULE: ./node_modules/@actions/core/lib/core.js
-var core = __nccwpck_require__(2186);
-// EXTERNAL MODULE: ./node_modules/@actions/exec/lib/exec.js
-var exec = __nccwpck_require__(1514);
-// EXTERNAL MODULE: ./node_modules/@actions/tool-cache/lib/tool-cache.js
-var tool_cache = __nccwpck_require__(7784);
-;// CONCATENATED MODULE: ./lib/util.js
-
-const osArchToUrl = (os, arch) => {
-    if (os.toLowerCase() === 'linux') {
-        if (arch.toLowerCase() === 'x86_64' || arch.toLowerCase() === 'x64') {
-            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz';
-        }
-        if (arch.toLowerCase() === 'arm64' ||
-            arch.toLowerCase() === 'aarch64' ||
-            arch.toLowerCase() === 'armv8') {
-            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-aarch64-unknown-linux-musl.tgz';
-        }
-        if (arch.toLowerCase() === 'armv7') {
-            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-musl.tgz';
-        }
-    }
-    if (os.toLowerCase() === 'windows') {
-        if (arch.toLowerCase() === 'x86_64' || arch.toLowerCase() === 'x64') {
-            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-pc-windows-msvc.zip';
-        }
-        if (arch.toLowerCase() === 'arm64' ||
-            arch.toLowerCase() === 'aarch64' ||
-            arch.toLowerCase() === 'armv8') {
-            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-aarch64-pc-windows-msvc.zip';
-        }
-    }
-    if (os.toLowerCase() === 'macos') {
-        if (arch.toLowerCase() === 'arm64' ||
-            arch.toLowerCase() === 'aarch64' ||
-            arch.toLowerCase() === 'armv8' ||
-            arch.toLowerCase() === 'm1' ||
-            arch.toLowerCase() === 'm2') {
-            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-aarch64-apple-darwin.zip';
-        }
-        if (arch.toLowerCase() === 'x86_64' || arch.toLowerCase() === 'x64') {
-            return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-apple-darwin.zip';
-        }
-        return 'https://github.com/cargo-bins/cargo-binstall/releases/latest/download/cargo-binstall-universal-apple-darwin.zip';
-    }
-    (0,core.setFailed)('Unsupported OS/arch');
-    return '';
-};
-
-;// CONCATENATED MODULE: ./lib/main.mjs
+/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(2186);
+/* harmony import */ var _actions_exec__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(1514);
+/* harmony import */ var _actions_tool_cache__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(7784);
+/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_3__ = __nccwpck_require__(4024);
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -6718,53 +6724,53 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 const extractArchive = (url, archive) => __awaiter(void 0, void 0, void 0, function* () {
     if (url.endsWith('.zip')) {
-        return yield (0,tool_cache.extractZip)(archive);
+        return yield (0,_actions_tool_cache__WEBPACK_IMPORTED_MODULE_2__.extractZip)(archive);
     }
     if (url.endsWith('.tgz')) {
-        return yield (0,tool_cache.extractTar)(archive);
+        return yield (0,_actions_tool_cache__WEBPACK_IMPORTED_MODULE_2__.extractTar)(archive);
     }
-    (0,core.setFailed)(`Unknown archive kind: ${archive} (expected .tgz or .zip)`);
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed)(`Unknown archive kind: ${archive} (expected .tgz or .zip)`);
     return '';
 });
 const isCached = (os, arch) => __awaiter(void 0, void 0, void 0, function* () {
-    const cachedBinstall = (0,tool_cache.find)('cargo-binstall', 'latest', `${os}-${arch}`);
+    const cachedBinstall = (0,_actions_tool_cache__WEBPACK_IMPORTED_MODULE_2__.find)('cargo-binstall', 'latest', `${os}-${arch}`);
     if (cachedBinstall !== '') {
-        (0,core.addPath)(cachedBinstall);
+        (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.addPath)(cachedBinstall);
         return true;
     }
     return false;
 });
 const fetchBinstall = (os, arch) => __awaiter(void 0, void 0, void 0, function* () {
-    const binstallUrl = osArchToUrl(os, arch);
-    const binstallArchive = yield (0,tool_cache.downloadTool)(binstallUrl);
+    const binstallUrl = (0,_util_js__WEBPACK_IMPORTED_MODULE_3__/* .osArchToUrl */ .o)(os, arch);
+    const binstallArchive = yield (0,_actions_tool_cache__WEBPACK_IMPORTED_MODULE_2__.downloadTool)(binstallUrl);
     const extractedPath = yield extractArchive(binstallUrl, binstallArchive);
-    const cachedPath = yield (0,tool_cache.cacheDir)(extractedPath, os.toLowerCase() === 'windows' ? 'cargo-binstall.exe' : 'cargo-binstall', 'latest', `${os}-${arch}`);
-    (0,core.addPath)(cachedPath);
+    const cachedPath = yield (0,_actions_tool_cache__WEBPACK_IMPORTED_MODULE_2__.cacheDir)(extractedPath, os.toLowerCase() === 'windows' ? 'cargo-binstall.exe' : 'cargo-binstall', 'latest', `${os}-${arch}`);
+    (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.addPath)(cachedPath);
 });
 const installPackages = () => __awaiter(void 0, void 0, void 0, function* () {
-    const packages = (0,core.getInput)('packages')
+    const packages = (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)('packages')
         .split(/(,|\s)+/)
         .map((p) => p.trim())
         .filter((p) => p.length > 0);
-    yield (0,exec.exec)('cargo-binstall', ['-y', '--no-symlinks', ...packages]);
+    yield (0,_actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec)('cargo-binstall', ['-y', '--no-symlinks', ...packages]);
 });
 function run() {
     var _a, _b;
     return __awaiter(this, void 0, void 0, function* () {
         try {
             if (!process.env.RUNNER_OS || !process.env.RUNNER_ARCH) {
-                (0,core.setFailed)('Missing runner OS and arch');
+                (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed)('Missing runner OS and arch');
             }
             const os = (_a = process.env.RUNNER_OS) !== null && _a !== void 0 ? _a : '';
             const arch = (_b = process.env.RUNNER_ARCH) !== null && _b !== void 0 ? _b : '';
             if (!(yield isCached(os, arch))) {
-                yield (0,core.group)('Fetch cargo binstall', () => fetchBinstall(os, arch));
+                yield (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.group)('Fetch cargo binstall', () => fetchBinstall(os, arch));
             }
-            yield (0,core.group)('Install packages with cargo-binstall', () => installPackages());
+            yield (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.group)('Install packages with cargo-binstall', () => installPackages());
         }
         catch (error) {
             if (error instanceof Error)
-                (0,core.setFailed)(error.message);
+                (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed)(error.message);
         }
     });
 }
