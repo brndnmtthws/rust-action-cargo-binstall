@@ -6802,8 +6802,8 @@ const installPackages = () => __awaiter(void 0, void 0, void 0, function* () {
     yield (0,_actions_exec__WEBPACK_IMPORTED_MODULE_1__.exec)('cargo-binstall', ['-y', '--no-symlinks', ...packages]);
 });
 function run() {
-    var _a, _b;
     return __awaiter(this, void 0, void 0, function* () {
+        var _a, _b;
         try {
             if (!process.env.RUNNER_OS || !process.env.RUNNER_ARCH) {
                 (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed)('Missing runner OS and arch');
